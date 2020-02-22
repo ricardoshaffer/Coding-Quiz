@@ -6,14 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/style.css">
-  <script src="./assets/core-logic.js"></script>
-  <script src="./assets/question-objects.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <!-- FA code and Google Fonts for icons  below-->
-  <script src="https://kit.fontawesome.com/bf73769ee2.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Meta tags for Quiz page-->
 <!-- META TAGS-->
   <meta name="description" content="Generic Coding Quiz for API Comprehension"><meta property="og:site_name">
@@ -26,105 +23,14 @@
 </head>
 <main>
 <body>
-  <p id="Question"></p>
+    <p id="Question"></p>
+    <p id="time"></p>
     <div class="list-group" id="myList" role="tablist">
-        <a class="list-group-item list-group-item-action" data-toggle="list" role="tab">Home</a>
-        <a class="list-group-item list-group-item-action" data-toggle="list" role="tab">Profile</a>
-        <a class="list-group-item list-group-item-action" data-toggle="list" role="tab">Messages</a>
-        <a class="list-group-item list-group-item-action" data-toggle="list" role="tab">Settings</a>
       </div>
-    
-      
-<script>
+    <p id="feedbackEl"></p>
+    <script src="./assets/question-objects.js"></script>    
+    <script src="./assets/core-logic.js"></script>
 
-
-
-
-  $(function () {
-    $('#myList a:last-child').tab('show')
-  });
-// Initiating Document
-  $(document).ready(function() {
-// Creating function to define object
-
-
-
-    // handlers for question queries
-let quizQuestions = [
-    {
-        question: "something?",
-        multiChoice: ["one", "two", "three", "four", "all of the above"],
-        correctAnswer: "one"
-    },
-    {
-        question: "something 2?",
-        multiChoice: ["one", "two", "three", "four", "all of the above"],
-        correctAnswer: "two"
-    },
-    {
-        question: "something 3?",
-        multiChoice: ["one", "two", "three", "four", "all of the above"],
-        correctAnswer: "three"
-    },
-    {
-        question: "something 4?",
-        multiChoice: ["one", "two", "three", "four", "all of the above"],
-        correctAnswer: "four"
-    },
-    {
-        question: "something 5?",
-        multiChoice: ["one", "two", "three", "four", "all of the above"],
-        correctAnswer: "all of the above"
-    },
-];
-// function quizList(question, multiChoice, correctAnswer){
-//       this.question = question;
-//       this.multiChoice = multiChoice;
-//       this.correctAnswer = correctAnswer;
-      
-// }
-// let questionList = new quizList(quizQuestions);
-// console.log(questionList.question);
-// for (var i = 0; i > 0; i++){
-//     function quizList(question, multiChoice, correctAnswer){
-//       preventDefault();
-//       this.question = question;
-//       this.multiChoice = multiChoice;
-//       this.correctAnswer = correctAnswer;
-// }
-//       console.log("testing iteration section: " + questionList.question[i]);
-//     };
-function quizList(question, multiChoice, correctAnswer){
-      this.question = question;
-      this.multiChoice = multiChoice;
-      this.correctAnswer = correctAnswer;
-  }
-  let questionList = new quizList(quizQuestions);
-  let amtOfQuestions = questionList.question.length;
-  console.log(questionList.question.length);
-
-for (var i = 1; i < amtOfQuestions; i++){
-  // let questionList = new quizList(quizQuestions[i]);
-  let displayQuestions = questionList(this.question[i]);
-  document.getElementById("Question").innerHTML = displayQuestions;
-  console.log(displayQuestions);
-}
-  
-/// end of Question
-//let questionSet = (question, multiChoice, correctAnswer);
-
-
-    //for (var i = 0; i < this.multiChoice.length; i++) {
-    //let li = multiChoice[i];
-    //let li = document.createElement("list-group-item list-group-item-action");
-    //li.textContent = multiChoice[i];
-    //let displayColorOptions = document.querySelector("#myList");
-    //displayColorOptions.appendChild(li); 
-    //console.log(li);
-   // };
-
-        })
-</script>
 
 </body>
 </main>

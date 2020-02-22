@@ -23,8 +23,11 @@ body {
 }
 .showing{
     display: visible;
-    transition: visibility 0s, opacity 0.5s linear;
+    opacity: 1;
+    transition: visibility 2s, opacity 0.5s linear;
 }
 .hiding{
     display: hidden;
+    opacity: 0;
+    transition: visibility 2s, opacity 0.5s linear;
 }

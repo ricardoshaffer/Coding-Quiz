@@ -1,8 +1,8 @@
-let quizQuestions = [
+let jsQuizQuestions = [
     {
         question: "something?",
-        multiChoice: ["one", "two", "three", "four", "all of the above"],
-        correctAnswer: "one"
+        multiChoice: ["a", "two", "three", "four", "all of the above"],
+        correctAnswer: "a"
     },
     {
         question: "something 2?",
@@ -24,5 +24,4 @@ let quizQuestions = [
         multiChoice: ["one", "two", "three", "four", "all of the above"],
         correctAnswer: "all of the above"
     },
-
-]
+];
