@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(0, 103, 199);
+  background-image: linear-gradient(to right, rgb(111, 180, 160) , rgb(76, 104, 182));
+    color: white;
+    
+}
+#Question {
+    font-size: 24px;
+    padding: 50px 100px 10px 100px;
+    font-weight: bolder;
+}
+.list-group-item{
+    background-color: rgba(255,255,255,0.1);
+}
+.list-group-item:hover {
+    background-color: rgba(255,255,255,0.3);
+}
