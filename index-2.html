@@ -31,17 +31,17 @@
     <p id="feedbackEl"></p>
       
 <script>
-     let currentQuestionNo = 0;
-    document.addEventListener("DOMContentLoaded", function (event) {
-       
-    $(document).ready(function() {
-// variables for data attribution and processing
 
+ //   $(document).ready(function() {
+// variables for data attribution and processing
+let currentQuestionNo= 0;
 let possibleAnswers = document.getElementById("myList");
 var timerEl = document.getElementById("time");
 let timerId;
 let multiChoice;
-
+let passedValue;
+let feedbackEl = document.getElementById("feedbackEl");
+document.getElementById("fading");
 
 
 //let time = jsQuizQuestions.length * 15;
@@ -73,16 +73,16 @@ let jsQuizQuestions = [
         multiChoice: ["one", "two", "three", "four", "all of the above"],
         correctAnswer: "all of the above"
     },
-]
-
+];
 getQuestion();
 
 function getQuestion() {
+
     // get current question object from array
-    let currentQuestion = jsQuizQuestions[currentQuestionNo];
+    currentQuestion = jsQuizQuestions[currentQuestionNo];
     // update title with current question
     let theQuestion = document.getElementById("Question");
-    theQuestion.innerHTML = "";
+    possibleAnswers.innerHTML = "";
     let questionNumber = ([currentQuestionNo + 1] + ". ");
     theQuestion.textContent = (questionNumber + currentQuestion.question);
     console.log(theQuestion.textContent);
@@ -99,17 +99,17 @@ function getQuestion() {
       // display on the page
       selectedAnswer.onclick = getValue;
       possibleAnswers.appendChild(selectedAnswer);
-      
-      console.log(jsQuizQuestions[currentQuestionNo].correctAnswer);
+      console.log("question Number: " + theChoice);
     });
-  }
-
+  
+  passedValue = (jsQuizQuestions[currentQuestionNo].correctAnswer);
 
   ///// NEXT QUESTION FUNCTION
 
   function getValue() {
   // check if user guessed wrong
-  if (this.value !== jsQuizQuestions[currentQuestionNo].correctAnswer) {
+  if (this.value !== passedValue) {
+    console.log(jsQuizQuestions[currentQuestionNo].correctAnswer);
     // penalize time
     time -= 15;
 
@@ -119,16 +119,29 @@ function getQuestion() {
 
     // display new time on page
     timerEl.textContent = time;
-    feedbackEl.textContent = "Wrong!";
+    feedbackEl.textContent = "INCORRECT";
     console.log(jsQuizQuestions[currentQuestionNo].correctAnswer);
+    feedbackEl.setAttribute("class", "p-3 mb-2 bg-danger text-dark");
   } else {
-    feedbackEl.textContent = "Correct!";
+    feedbackEl.textContent = "YOU GOT IT!";
+    feedbackEl.setAttribute("class", "p-3 mb-2 bg-success text-dark showing");
+
+
+  };
+  
+  currentQuestionNo ++;
+  if(currentQuestionNo < jsQuizQuestions.length){
+  getQuestion();
+  console.log("question length: " + jsQuizQuestions.length);
+ 
+  } else {
+    feedbackEl.textContent = "YOU'RE DONE'!";
   }
   }
+ 
+}
 
-  currentQuestionNo++;
-
-});})
+//});
 </script>
 
 </body>
